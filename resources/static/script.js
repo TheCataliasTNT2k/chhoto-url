@@ -185,11 +185,7 @@ const TR = (row) => {
     // For now, we disable copying on WebKit due to a possible bug. Manual copying is enabled instead.
     // Take a look at https://github.com/SinTan1729/chhoto-url/issues/36
     if (window.isSecureContext && !(isSafari)) {
-        if (CONFIG.open_url) {
-            shortTD = TD(A_SHORT(row["shortlink"]), "Short URL", false);
-        } else {
-            shortTD = TD(A_SHORT(row["shortlink"]), "Short URL", row["shortlink"]);
-        }
+        shortTD = TD(A_SHORT(row["shortlink"]), "Short URL", row["shortlink"]);
     }
     else {
         shortTD = TD(A_SHORT_INSECURE(row["shortlink"], SITE_URL), "Short URL", false);
